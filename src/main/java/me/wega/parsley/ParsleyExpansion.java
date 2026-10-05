@@ -41,6 +41,9 @@ public final class ParsleyExpansion extends PlaceholderExpansion {
         if (type.equals("ifempty") && args.size() == 3)
             return this.isEmpty(args.get(0)) ? args.get(1) : args.get(2);
 
+        if (type.equals("isempty") && args.size() == 1)
+            return this.isEmpty(args.get(0)) ? "true" : "false";
+
         if (type.equals("isequal") && args.size() == 4) {
             final String value = args.get(0);
             final String compare = args.get(1);
@@ -89,6 +92,7 @@ public final class ParsleyExpansion extends PlaceholderExpansion {
 
     private List<String> split(final String input) {
         final List<String> result = new ArrayList<>();
+        if (input == null) return result;
         final StringBuilder current = new StringBuilder();
         int bracketDepth = 0;
         boolean escaped = false;

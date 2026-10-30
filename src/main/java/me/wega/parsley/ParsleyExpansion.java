@@ -38,6 +38,9 @@ public final class ParsleyExpansion extends PlaceholderExpansion {
         final String resolved = PlaceholderAPI.setBracketPlaceholders(player, params.substring(i + 1));
         final List<String> args = this.split(resolved);
 
+        if (type.equals("format") && args.size() == 1)
+            return CompactNumberFormatter.format(args.get(0));
+
         if (type.equals("ifempty") && args.size() == 3)
             return this.isEmpty(args.get(0)) ? args.get(1) : args.get(2);
 

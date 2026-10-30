@@ -24,7 +24,7 @@ I got tired of needing multiple expansions or writing super long placeholder log
 
 | Placeholder | Description |
 |-------------|-------------|
-| `%parsley_format_<value>%` | Compact US-style number formatting, e.g. `1234567` → `1.235M`; invalid values are returned unchanged |
+| `%parsley_numberformat_<value>%` | Compact US-style number formatting, e.g. `1234567` → `1.235M`; invalid values are returned unchanged |
 | `%parsley_ifempty_<value>_<if-empty>_<if-not-empty>%` | Check if value is empty/null/none |
 | `%parsley_isequal_<value>_<compare>_<if-equal>_<if-not-equal>%` | Case-insensitive equality |
 | `%parsley_greater_<value>_<threshold>_<if-true>_<if-false>%` | Numeric greater than |
@@ -38,7 +38,7 @@ I got tired of needing multiple expansions or writing super long placeholder log
 
 | Use Case | Placeholder | Result |
 |----------|-------------|--------|
-| Compact balance | `%parsley_format_{pr_money}%` | `1.235M` for `1234567` |
+| Compact balance | `%parsley_numberformat_{pr_money}%` | `1.235M` for `1234567` |
 | Conditional prefix | `%parsley_ifempty_{luckperms_prefix}__[{luckperms_prefix}]%` | `[Admin]` or empty |
 | Level-based title | `%parsley_greater_{player_level}_100_Elite_Novice%` | `Elite` or `Novice` |
 | Health warning | `%parsley_less_{player_health}_5_<red>Low HP!_<green>OK%` | `Low HP!` or `OK` |
